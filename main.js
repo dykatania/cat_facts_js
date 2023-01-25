@@ -1,30 +1,29 @@
 let targets = document.getElementsByClassName('target');
 let target = targets[0];
 
-fetch('https://dog.ceo/api/breeds/list/all')
-    .then((response) => {
-        return response.json();
-    })
+let title = document.createElement('h2');
+title.classList.add('title');
+title.innerText = 'Types of vehicles';
+target.appendChild(title);
 
-    .then(breeds => {
-        for (const breed of breeds) {
+let div = document.createElement('div');
+div.classList.add('main');
+target.appendChild(div);
 
-            let div = document.createElement('div');
-            div.classList.add('breed');
+let cars = document.createElement('a');
+cars.classList.add('button');
+cars.innerText = 'Cars list';
+cars.href = `cars.html`;
+div.appendChild(cars);
 
-            let id = 1
-            let title = document.createElement('h4');
-            title.classList.add('breed_name');
-            title.innerText = id `${ breed.message}`;
-            div.appendChild(title);
-            id++;
+let motorcycles = document.createElement('a');
+motorcycles.classList.add('button');
+motorcycles.innerText = 'Motorcycles list';
+motorcycles.href = `motorcycles.html`;
+div.appendChild(motorcycles);
 
-            let link = document.createElement('a');
-            link.classList.add('breed_types');
-            link.innerText = 'Types';
-            link.href = `breed-types.html?id=${breed.id}`;
-            div.appendChild(link);
-
-            target.appendChild(div);
-        }
-    })
+let trucks = document.createElement('a');
+trucks.classList.add('button');
+trucks.innerText = 'Trucks list';
+trucks.href = `trucks.html`;
+div.appendChild(trucks);
