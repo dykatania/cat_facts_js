@@ -15,10 +15,10 @@ fetch('https://parallelum.com.br/fipe/api/v1/motos/marcas')
                 let div = document.createElement('div');
                 div.classList.add('vehicle');
 
-                let title = document.createElement('h4');
-                title.classList.add('info');
-                title.innerText = vehicle.nome;
-                title.onclick = function infoClick() {
+                let name = document.createElement('h4');
+                name.classList.add('info');
+                name.innerText = vehicle.nome;
+                name.onclick = function infoClick(event) {
 
                     let box = document.createElement('div');
                     box.classList.add('box');
@@ -27,9 +27,10 @@ fetch('https://parallelum.com.br/fipe/api/v1/motos/marcas')
                     info.innerText = 'Motorcycle code: ' + vehicle.codigo;
                     box.appendChild(info);
 
-                    title.appendChild(box);
+                    name.appendChild(box);
+
                 }
-                div.appendChild(title);
+                div.appendChild(name);
 
                 target.appendChild(div);
             }
